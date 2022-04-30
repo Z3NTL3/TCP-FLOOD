@@ -3,7 +3,11 @@ import sys
 from concurrent.futures import Future
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
-from random import randbytes
+try:
+    from random import randbytes
+except:
+    print("Update python to version 3.9+ in order to run this")
+    sys.exit(-1)
 
 # Educational Purposes Only
 # Z3NTL3
