@@ -1,5 +1,5 @@
 # TCP-Flood
-TCP Floods including RAW TCP
+TCP Floods including RAW TCP. FOR Ipv4's only since the scripts using ADDR Family ```AF_INET```
 
 ### Usage
 ```
