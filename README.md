@@ -9,11 +9,8 @@ python3 z3slam6.py ip port
 python3 z3slam7.py ip port
 python3 z3slam8.py ip port
 ```
-```z3slam4``` is raw tcp and requires python 3.9+
-```z4slam5``` is raw tcp and requires python3+
-```z4slam6``` is raw tcp and requires python3+
 
-**I suggest using z3slam5 or 6**
+**I suggest using z3slam7**
 
 # Requirement
 Python 3.9
