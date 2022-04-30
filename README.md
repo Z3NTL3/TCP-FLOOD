@@ -5,3 +5,6 @@ Just a UDP Flooder
 ```
 python3 z3slam.py ip port
 ```
+
+### ReadME
+Educational purposes only
