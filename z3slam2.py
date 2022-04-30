@@ -24,7 +24,7 @@ except:
 
 # Will implement Proxied L4 DDOS Later
 ''' 
-def Proxies(file = sys.argv[1]):
+def Proxies(file = sys.argv[3]):
     if os.path.exists(file):
         with open(file,"r")as file:
             content = file.read().strip(" ").split("\n")
