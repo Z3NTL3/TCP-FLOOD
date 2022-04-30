@@ -11,7 +11,7 @@ from concurrent.futures import as_completed
 count = 0
 def Usage():
     print(f"""
-python3 {__file__} ip port threads
+python3 {__file__} ip port
 """)
 
 try:
