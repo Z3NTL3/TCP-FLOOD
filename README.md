@@ -1,5 +1,5 @@
 # TCP-Flood
-Just a TCP Flooder
+TCP Floods including RAW TCP
 
 ### Usage
 ```
