@@ -21,7 +21,7 @@ python3 {__file__} ip port bytes
 try:
     websiteHost_or_IP = sys.argv[1]
     portX = int(sys.argv[2])
-    bytesX = int(sys.argv[2])
+    bytesX = int(sys.argv[3])
     
 except:
     Usage()
