@@ -12,7 +12,7 @@ python3 z3slam7.py ip port
 **I suggest using z3slam7 for most power**
 
 # Requirement
-Python 3.9
+Python 3+
 
 ### ReadME
 Educational purposes only
