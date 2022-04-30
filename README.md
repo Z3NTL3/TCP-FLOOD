@@ -4,13 +4,13 @@ TCP Floods including RAW TCP. FOR Ipv4's only since the scripts using ADDR Famil
 
 ### Usage
 ```
-python3 z3slam.py ip port
+python3 z3slam.py ip port bytes
 ```
 
 **I suggest using z3slam7 for most power**
 
 # Requirement
-Python 3+
+Python 3.9+
 
 ### ReadME
 Educational purposes only
