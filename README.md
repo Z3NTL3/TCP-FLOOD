@@ -7,6 +7,9 @@ Developed by **Z3NTL3**
 ### Usage
 ```
 python3 z3slam.py ip port bytes
+
+Example usage:
+python3 z3slam.py 127.0.0.1 80 10000
 ```
 
 ### Credits
