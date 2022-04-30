@@ -26,7 +26,14 @@ try:
 except:
     Usage()
     sys.exit(-1)
-
+def CheckValid():
+    try:
+        with socket.socket(socket.AF_INET,socket.SOCK_STREAM)as socks:
+            socks.settimeout(5)
+            socks.connect((sys.argv[1],portX))
+        return True
+    except:
+        return False
 # Will implement Proxied L4 DDOS Later
 ''' 
 def Proxies(file = sys.argv[3]):
@@ -70,4 +77,7 @@ def Main():
         print(f.result())
         
 if __name__ == "__main__":
+    validity = CheckValid()
+    if validity == False:
+        sys.exit("This ip:port refused the connection")
     Main()
