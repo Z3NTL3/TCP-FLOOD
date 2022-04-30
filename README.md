@@ -4,9 +4,7 @@ TCP Floods including RAW TCP. FOR Ipv4's only since the scripts using ADDR Famil
 
 ### Usage
 ```
-python3 z3slam5.py ip port
-python3 z3slam6.py ip port
-python3 z3slam7.py ip port
+python3 z3slam.py ip port
 ```
 
 **I suggest using z3slam7 for most power**
