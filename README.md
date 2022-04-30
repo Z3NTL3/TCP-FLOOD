@@ -1,5 +1,5 @@
-# UDP-Flood
-Just a UDP Flooder
+# TCP-Flood
+Just a TCP Flooder
 
 ### Usage
 ```
