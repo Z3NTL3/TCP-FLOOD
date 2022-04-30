@@ -5,6 +5,7 @@ Just a TCP Flooder
 ```
 python3 z3slam.py ip port
 python3 z3slam2.py ip port
+python3 z3slam3.py ip port bytes
 ```
 
 ### ReadME
