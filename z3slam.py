@@ -10,7 +10,6 @@ except:
     sys.exit(-1)
 # Educational Purposes Only
 # Z3NTL3
-# TCP Raw Layer 4 Flood for Ipv4's
 
 count = 0
 def Usage():
