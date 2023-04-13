@@ -1,7 +1,8 @@
 # TCP-Flood
 TCP Flood. FOR Ipv4's only since the scripts using ADDR Family ```AF_INET```<br>
 <a href="https://www.youtube.com/watch?v=uIpoeQUc1Bk">Video Proof</a><br>
-![z3slam5 result](https://user-images.githubusercontent.com/48758770/166100215-b2c377d3-a70b-406f-9b78-cce4c16703bc.png)
+![z3slam5 result](https://media.discordapp.net/attachments/1015653543249727672/1095994321032990761/image.png?width=1151&height=441)
+On a single machine.
 ### Author
 Developed by **Z3NTL3**
 
